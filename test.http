@@ -1,0 +1,42 @@
+### Register a new employee
+POST http://localhost:5000/api/employees/register
+Content-Type: application/json
+
+{
+  "name": "Rohila",
+  "email": "rohila@test.com",
+  "password": "123456"
+}
+
+### Login as employee
+POST http://localhost:5000/api/employees/login
+Content-Type: application/json
+
+{
+  "email": "rohila@test.com",
+  "password": "123456"
+}
+
+### Create an enquiry (public)
+POST http://localhost:5000/api/enquiries
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@test.com",
+  "courseInterest": "React"
+}
+
+### Get all public enquiries
+GET http://localhost:5000/api/enquiries/public
+
+### Get private enquiries (requires login)
+GET http://localhost:5000/api/enquiries/private
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDhiZjVjNWQ2MjVlMjRmZmY0YjE5MiIsImlhdCI6MTc2MjE4OTA1NSwiZXhwIjoxNzYyMTkyNjU1fQ.Kir8FfQCApZViYrdW9uNouUh_B4ujYtfzssO5SjxYq4
+
+
+
+### Claim an enquiry (requires login)
+POST http://localhost:5000/api/enquiries/claim/6908c0215d625e24fff4b195
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDhiZjVjNWQ2MjVlMjRmZmY0YjE5MiIsImlhdCI6MTc2MjE4OTA1NSwiZXhwIjoxNzYyMTkyNjU1fQ.Kir8FfQCApZViYrdW9uNouUh_B4ujYtfzssO5SjxYq4
+
